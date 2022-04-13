@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculatorMVVM.Views.CalculatorPage">
+    <Grid Padding="5,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="resultText" FontSize="48" FontAttributes="Bold" BackgroundColor="Black" Text="{Binding Expression}"
+              TextColor="White" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+              LineBreakMode="NoWrap" Grid.ColumnSpan="4" />
+
+        <Button x:Name="btn7" Text="7" Grid.Row="1" Grid.Column="0"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="36" BorderRadius="0" 
+                Command="{Binding EnterCharCommand}" CommandParameter="{x:Reference btn7}" />
+        <Button x:Name="btn8" Text="8" Grid.Row="1" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="36" BorderRadius="0" 
+                Command="{Binding EnterCharCommand}" CommandParameter="{x:Reference btn8}" />
+        <Button x:Name="btn9" Text="9" Grid.Row="1" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="36" BorderRadius="0" 
+                Command="{Binding EnterCharCommand}" CommandParameter="{x:Reference btn9}" />
+
+        <Button x:Name="btn4" Text="4" Grid.Row="2" Grid.Column="0"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="36" BorderRadius="0" 
+                Command="{Binding EnterCharCommand}" CommandParameter="{x:Reference btn4}" />
+        <Button x:Name="btn5" Text="5" Grid.Row="2" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="36" BorderRadius="0" 
+                Command="{Binding EnterCharCommand}" CommandParameter="{x:Reference btn5}" />
+        <Button x:Name="btn6" Text="6" Grid.Row="2" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="36" BorderRadius="0" 
+                Command="{Binding EnterCharCommand}" CommandParameter="{x:Reference btn6}" />
+
+        <Button x:Name="btn1" Text="1" Grid.Row="3" Grid.Column="0"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="36" BorderRadius="0" 
+                Command="{Binding EnterCharCommand}" CommandParameter="{x:Reference btn1}" />
+        <Button x:Name="btn2" Text="2" Grid.Row="3" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="36" BorderRadius="0" 
+                Command="{Binding EnterCharCommand}" CommandParameter="{x:Reference btn2}" />
+        <Button x:Name="btn3" Text="3" Grid.Row="3" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="36" BorderRadius="0" 
+                Command="{Binding EnterCharCommand}" CommandParameter="{x:Reference btn3}" />
+        <Button x:Name="btn0" Text="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="36" BorderRadius="0" 
+                Command="{Binding EnterCharCommand}" CommandParameter="{x:Reference btn0}" />
+
+        <Button x:Name="btnDelenie" Text="/" Grid.Row="1" Grid.Column="3"
+                BackgroundColor="Orange" TextColor="White"
+                FontSize="36" BorderRadius="0" 
+                Command="{Binding EnterCharCommand}" CommandParameter="{x:Reference btnDelenie}" />
+        <Button x:Name="btnUmn" Text="*" Grid.Row="2" Grid.Column="3"
+                BackgroundColor="Orange" TextColor="White"
+                FontSize="36" BorderRadius="0" 
+                Command="{Binding EnterCharCommand}" CommandParameter="{x:Reference btnUmn}" />
+        <Button x:Name="btnMin" Text="-" Grid.Row="3" Grid.Column="3"
+                BackgroundColor="Orange" TextColor="White"
+                FontSize="36" BorderRadius="0" 
+                Command="{Binding EnterCharCommand}" CommandParameter="{x:Reference btnMin}" />
+        <Button x:Name="btnPlus" Text="+" Grid.Row="4" Grid.Column="3"
+                BackgroundColor="Orange" TextColor="White"
+                FontSize="36" BorderRadius="0" 
+                Command="{Binding EnterCharCommand}" CommandParameter="{x:Reference btnPlus}" />
+
+        <Button Text="C" Grid.Row="5" Grid.Column="0"
+                BackgroundColor="#808080" TextColor="White"
+                FontSize="36" BorderRadius="0" 
+                Command="{Binding ClearAllCommand}" CommandParameter="{Binding}" />
+
+        <Button Text="=" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"
+                BackgroundColor="Orange" TextColor="White"
+                FontSize="36" BorderRadius="0" 
+                Command="{Binding CalculateCommand}" CommandParameter="{Binding}" />
+
+    </Grid>
+</ContentPage>
